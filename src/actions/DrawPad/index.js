@@ -1,5 +1,5 @@
 import request from '../../network/request';
-import { apiLatexCreate } from '../../network/api';
+import { apiLatexImageCreate } from '../../network/api';
 import {
     SET_PEN_SIZE,
     SET_PIC_DATA,
@@ -17,17 +17,17 @@ export const setPicData = (data)=> ({
 })
 
 
-export const savePic = () => {
+export const savePic = (data) => {
     return (dispatch, getState) => {
         const state = getState();
         const option = {
             method: 'POST',
             body: JSON.stringify({
                 number_id: state.latexBox.number_id,
-                url: state.drawPad.picData,
+                url: data,
             })
         }
-        return request(apiLatexCreate, option)
+        return request(apiLatexImageCreate, option)
                 .then(
                 )
     }

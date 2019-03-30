@@ -36,7 +36,7 @@ export default class SignaturePad extends React.Component {
 
   savePic(e) {
     var data = this.toDataURL('png');
-    this.props.setPicData(data);
+    this.props.savePic(data);
   }
 
   clear(e) {

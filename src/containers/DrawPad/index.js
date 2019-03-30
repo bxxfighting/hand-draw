@@ -13,7 +13,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => ({
     setPicData: (data) => dispatch(setPicData(data)),
-    savePic: () => dispatch(savePic())
+    savePic: (data) => dispatch(savePic(data))
 });
 
 export default connect(
